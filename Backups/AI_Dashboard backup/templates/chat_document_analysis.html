@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Analysis Chat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+        #response {
+            margin-top: 20px;
+            background: #ffffff;
+            padding: 20px;
+            border: #cccccc 1px solid;
+        }
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border: #e8491d 1px solid;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        textarea, input[type="file"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Document Analysis Chat</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/teacher_assistant">Teacher Assistant</a></li>
+                    <li><a href="/question_maker">Question Maker</a></li>
+                    <li class="current"><a href="/document_analysis">Document Analysis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <h1>Chat with Document Analysis Bot</h1>
+            <form id="document-analysis-form" enctype="multipart/form-data">
+                <label for="user_input">Enter your prompt:</label>
+                <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea><br><br>
+                
+                <label for="file">Upload a PDF:</label>
+                <input type="file" id="file" name="file" accept="application/pdf"><br><br>
+                
+                <button type="submit" class="button_1">Submit</button>
+            </form>
+            
+            <div id="response">
+                <h2>Response:</h2>
+                <p id="response-text"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('document-analysis-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            let formData = new FormData();
+            formData.append('user_input', document.getElementById('user_input').value);
+            let file = document.getElementById('file').files[0];
+            if (file) {
+                formData.append('file', file);
+            }
+            
+            let response = await fetch('/document_analysis', {
+                method: 'POST',
+                body: formData
+            });
+            
+            let result = await response.json();
+            document.getElementById('response-text').innerText = result.response;
+        });
+    </script>
+</body>
+</html>

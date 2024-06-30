@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard for Teachers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #50b3a2;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+            font-size: 24px; /* Reduced font size */
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: auto;
+        }
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin-top: 10px;
+        }
+        .card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>AI Dashboard</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/">Home</a></li>
+                    <li><a href="/teacher_assistant">Teacher Assistant</a></li>
+                    <li><a href="/question_maker">Question Maker</a></li>
+                    <li><a href="/document_analysis">Document Analysis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <img src="/static/images/teacher_assistant.png" alt="Teacher Assistant">
+                <h3>Teacher Assistant</h3>
+                <a href="/teacher_assistant"><button>Go</button></a>
+            </div>
+            <div class="card">
+                <img src="/static/images/question_maker.png" alt="Question Maker">
+                <h3>Question Maker</h3>
+                <a href="/question_maker"><button>Go</button></a>
+            </div>
+            <div class="card">
+                <img src="/static/images/document_analysis.png" alt="Document Analysis">
+                <h3>Document Analysis</h3>
+                <a href="/document_analysis"><button>Go</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

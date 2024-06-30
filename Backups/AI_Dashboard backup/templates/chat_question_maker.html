@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Maker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .chat-container {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .chat-box {
+            height: 500px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .user-message {
+            background-color: #dcf8c6;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+        }
+        header {
+            background: #50b3a2;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+            font-size: 24px; /* Reduced font size */
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Question Maker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/teacher_assistant">Teacher Assistant</a></li>
+                    <li class="current"><a href="/question_maker">Question Maker</a></li>
+                    <li><a href="/document_analysis">Document Analysis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <h2>Question Maker Bot</h2>
+        <div class="chat-box" id="chat-box"></div>
+        <form id="questionMakerForm">
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="Type your message...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat_question_maker.js') }}"></script>
+</body>
+</html>

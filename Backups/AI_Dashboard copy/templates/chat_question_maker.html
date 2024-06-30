@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Maker Bot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/chat_question_maker.js') }}"></script>
+</head>
+<body>
+    <h1>Question Maker Bot</h1>
+    <form id="chat-form" method="POST">
+        <input type="text" id="user-input" name="user_input" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="chat-response"></div>
+</body>
+</html>

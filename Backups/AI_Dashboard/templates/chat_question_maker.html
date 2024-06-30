@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Maker Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Question Maker Bot</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/">Home</a></li>
+                    <li><a href="/teacher_assistant">Teacher Assistant</a></li>
+                    <li><a href="/question_maker">Question Maker</a></li>
+                    <li><a href="/document_analysis">Document Analysis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <h2>Question Maker Bot</h2>
+        <div class="chat-box" id="chat-box"></div>
+        <form id="questionMakerForm">
+            <div class="input-group">
+                <input type="text" id="user-input" class="form-control" placeholder="Type your message...">
+                <button class="btn" type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat_question_maker.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">AI Dashboard for Teachers</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/teacher_assistant.png') }}" class="card-img-top" alt="Teacher Assistant">
+                    <div class="card-body">
+                        <h5 class="card-title">Teacher Assistant</h5>
+                        <a href="{{ url_for('teacher_assistant') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/question_maker.png') }}" class="card-img-top" alt="Question Maker">
+                    <div class="card-body">
+                        <h5 class="card-title">Question Maker</h5>
+                        <a href="{{ url_for('question_maker') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/document_analysis.png') }}" class="card-img-top" alt="Document Analysis">
+                    <div class="card-body">
+                        <h5 class="card-title">Document Analysis</h5>
+                        <a href="{{ url_for('document_analysis') }}" class="btn btn-primary">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
