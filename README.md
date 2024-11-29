@@ -2,7 +2,11 @@
 
 <h1 align="center" style="color: #4CAF50;">BENi AI Dashboard</h1>
 
-<p align="center" style="font-size: 1.2em;">A versatile AI-powered web based platform for document analysis, question generation, and virtual teaching assistance. Elevate your educational and professional experiences with advanced AI capabilities!</p>
+<p align="center" style="font-size: 1.2em;">A versatile AI-powered web-based platform for document analysis, question generation, and virtual teaching assistance. Elevate your educational and professional experiences with advanced AI capabilities!</p>
+
+<p align="center">
+    <img src="Home_page.png" alt="Home Page Screenshot" width="1000">
+</p>
 
 ---
 
